@@ -29,7 +29,7 @@ jobs:
           path: repo_1
           
       - name: Run a one-line script
-        run: python test/test_repo1.py
+        run: python repo_1/test/test_repo1.py
           
       - uses: actions/checkout@v3
         with:
