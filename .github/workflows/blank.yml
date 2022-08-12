@@ -26,6 +26,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: dongluw/repo_1
+          path: repo_1
           
       - name: Run a one-line script
         run: python test/test_repo1.py
@@ -33,10 +34,11 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: dongluw/repo_2
+          path: repo_2
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: python test_repo2.py
+        run: PYTHONPATH=repo_1/test/ python test_repo2.py
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
